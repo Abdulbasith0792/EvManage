@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Montserrat } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body style={montserrat.style} className='scrollbar-thin  scrollbar-thumb-blue-600 scrollbar-track-slate-500'>
+        <div className="scrollbar-hide">
+          {children}{" "}
+          <script src="../path/to/flowbite/dist/flowbite.min.js" async></script>
+        </div>
+      </body>
     </html>
   );
 }
